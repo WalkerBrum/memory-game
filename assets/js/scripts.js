@@ -83,23 +83,9 @@ function newHtmlWhenWin() {
     main.appendChild(playAgain);
 
     const resetGame = document.querySelector('.play-again');
-    resetGame.addEventListener('click', addCards);
-}
-
-function addCards() {
-    const message = document.querySelector('.message');
-    const resetGame = document.querySelector('.play-again');
-    
-    main.removeChild(message);
-    main.removeChild(resetGame);
-    main.classList.add('memory-game');
-
-    cards.forEach((card) => {
-        main.appendChild(card);
-        console.log(card);
-   })
-
-   location.reload();
+    resetGame.addEventListener('click', function() {
+        location.reload();
+    });
 }
 
 (function shuffle() {
